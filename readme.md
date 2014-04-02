@@ -1,0 +1,1 @@
+News ticker project using Enter, Update Exit pattern
