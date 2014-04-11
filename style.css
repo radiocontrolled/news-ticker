@@ -1,8 +1,10 @@
 article{
 	text-align: center;
+
 }
 svg{
 	border: #C0392B solid 1px;
+		border-radius: 5px;
 }
 text{
 	font-size: 1.5em!important;
