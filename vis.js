@@ -37,9 +37,8 @@ function vis(data){
 		tickerItems
 			.transition()
 				.attr("transform", "translate(" + w + ")")
-				.style("opacity", 0)
 				.ease("linear")
-				.duration(3000)
+				.duration(5000)
 				.remove();		
 	};
 	
@@ -51,9 +50,9 @@ function vis(data){
 		 	random = [data.response.results[random]];
 		 	
 		 	redraw(random);
-		 		
+		 	console.log("foo");
 		 
-		}, 2500);
+		}, 5070);
 		
 
 };
