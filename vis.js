@@ -1,6 +1,6 @@
 var w = window.innerWidth/1.2;
 var h = window.innerHeight/1.5;
-
+var datum;
 var svg = d3.select("article")
 			.append("svg")
 			.attr({
@@ -13,7 +13,7 @@ d3.jsonp("http://content.guardianapis.com/search?&api-key=qcpra5vyaq7srabthtyvhh
 
 function vis(data){
 	
-	var datum = [data.response.results[0]];
+	 datum = [data.response.results[0]];
 	
 	var redraw = function(foo){
 		var tickerItems = svg.selectAll("text")
@@ -44,14 +44,21 @@ function vis(data){
 	
 	redraw(datum);
 
+	var counter = 0;
 
 	setInterval(function() {
-		 	var random = Math.floor(Math.random()*data.response.results.length);
-		 	random = [data.response.results[random]];
+						
+			if (counter < data.response.results.length){
+				
+				random = [data.response.results[counter]];
+		 		redraw(random);	
+		 		counter++;	
+			}
+			else {
+				counter = data.response.results.length;
+				redraw(datum);
+			}
 		 	
-		 	redraw(random);
-		 	console.log("foo");
-		 
 		}, 5070);
 		
 
