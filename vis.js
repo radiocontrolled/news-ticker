@@ -46,15 +46,15 @@ function vis(data){
 	var counter = 0;
 
 	setInterval(function() {
-						
-			if (counter < data.response.results.length -1 ){
-				counter++;
+			counter++;		
+			if (counter <= data.response.results.length-1 ){
 				random = [data.response.results[counter]];
 				redraw(random);
 			}
-			else {
-				counter = data.response.results.length;
-				redraw(datum);
+			else if(counter == data.response.results.length){
+				counter = 0; 
+				random = [data.response.results[counter]];
+				redraw(random);
 			}
 		}, 7070);
 }
