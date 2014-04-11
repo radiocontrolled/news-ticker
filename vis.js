@@ -28,8 +28,8 @@ function vis(data){
 			})
 			.attr({
 				"x":10,
-				"y":function(d,i){
-						return 100;
+				"y":function(){
+						return h/2;
 					}
 			});
 		
@@ -38,7 +38,7 @@ function vis(data){
 			.transition()
 			.attr("transform", "translate(" + w + ")")
 			.ease("linear")
-			.duration(5000)
+			.duration(7000)
 			.remove();		
 	};
 	
@@ -57,7 +57,7 @@ function vis(data){
 				counter = data.response.results.length;
 				redraw(datum);
 			}
-		}, 5070);
+		}, 7070);
 }
 	
 

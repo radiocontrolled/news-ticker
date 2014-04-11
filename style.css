@@ -1,14 +1,32 @@
 article{
 	text-align: center;
-
+	margin: 0 auto;
 }
+
 svg{
-	border: #C0392B solid 1px;
-		border-radius: 5px;
+	border: 1px solid #efefef;
+	border-radius: 5px;
 }
 text{
-	font-size: 1.5em!important;
-	fill: #2c3e50;
+	fill: #333333;
 	font-family: Helvetica, Arial, sans-serif;
 	font-weight: bold;
+}
+
+@media (max-width: 400px){
+	text{
+		font-size: .6em!important;	
+	}
+}
+
+@media (min-width: 401px){
+	text{
+		font-size: .9em!important;	
+	}
+}
+
+@media (min-width: 768px){
+	text{
+		font-size: 1.2em!important;	
+	}
 }
