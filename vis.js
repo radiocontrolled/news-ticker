@@ -7,18 +7,18 @@ var svg = d3.select("article")
 			.attr({
 				width:w,
 				height:h
-			})
+			});
 		
 //get the latest Guardian articles 
 d3.jsonp("http://content.guardianapis.com/search?&api-key=qcpra5vyaq7srabthtyvhhxs&callback=vis"); 
 
 function vis(data){
 	
-	 datum = [data.response.results[0]];
+	datum = [data.response.results[0]];
 	
 	var redraw = function(foo){
 		var tickerItems = svg.selectAll("text")
-			.data(foo, function(d) { return d; })
+			.data(foo, function(d) { return d; });
 		
 		tickerItems
 			.enter()
@@ -29,17 +29,17 @@ function vis(data){
 			.attr({
 				"x":10,
 				"y":function(d,i){
-	      			return 100;
-	      			}
-			})
+						return 100;
+					}
+			});
 		
 		
 		tickerItems
 			.transition()
-				.attr("transform", "translate(" + w + ")")
-				.ease("linear")
-				.duration(5000)
-				.remove();		
+			.attr("transform", "translate(" + w + ")")
+			.ease("linear")
+			.duration(5000)
+			.remove();		
 	};
 	
 	redraw(datum);
@@ -51,15 +51,14 @@ function vis(data){
 			if (counter < data.response.results.length -1 ){
 				counter++;
 				random = [data.response.results[counter]];
-		 		redraw(random);			
+				redraw(random);
 			}
 			else {
 				counter = data.response.results.length;
 				redraw(datum);
 			}
-		 	
 		}, 5070);
-};
+}
 	
 
 	
