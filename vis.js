@@ -1,4 +1,4 @@
-var w = window.innerWidth/1.2;
+var w = window.innerWidth/1.1;
 var h = window.innerHeight/1.5;
 var datum;
 var svg = d3.select("article")
