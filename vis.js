@@ -9,28 +9,54 @@ var svg = d3.select("article")
 			})
 		
 //get the latest Guardian articles 
-d3.jsonp("http://content.guardianapis.com/search?&api-key=qcpra5vyaq7srabthtyvhhxs&callback=doVis"); 
+d3.jsonp("http://content.guardianapis.com/search?&api-key=qcpra5vyaq7srabthtyvhhxs&callback=vis"); 
 
-function doVis(data){
-				
-	var unorderedList = svg.selectAll("text")
-		.data(data.response.results)
-		.enter()
-		.append("text")
-		.attr({
-			"href": function(d){
-				return d.webUrl;
-			},
-			"x":100,
-      		"y":100
-		})
-		.text(function(d){
-			return d.webTitle;
-		})	
+function vis(data){
 	
+	var datum = [data.response.results[0]];
+	
+	var redraw = function(foo){
+		var tickerItems = svg.selectAll("text")
+			.data(foo, function(d) { return d; })
+			
+		
+		tickerItems
+			.enter()
+			.append("text")
+			.text(function(d){
+				return d.webTitle;
+			})
+			.attr({
+				"x":10,
+				"y":function(d,i){
+	      			return 100;
+	      			}
+			})
+		
+		
+		tickerItems
+			.transition()
+				.attr("transform", "translate(" + w + ")")
+				.style("opacity", 0)
+				.ease("linear")
+				.duration(3000)
+				.remove();		
+	};
+	
+	redraw(datum);
+
+
+	setInterval(function() {
+		 	var random = Math.floor(Math.random()*data.response.results.length);
+		 	random = [data.response.results[random]];
+		 	
+		 	redraw(random);
+		 		
+		 
+		}, 2500);
+		
 
 };
-
-
+	
 
 	

@@ -1,5 +1,18 @@
-a, text{
+text{
 	font-size: 1em!important;
 	fill: black;
 	font-family: Helvetica, Arial, sans-serif;
+}
+.d-9,
+.d-8,
+.d-7,
+.d-6,
+.d-5,
+.d-4,
+.d-3,
+.d-2,
+.d-1,
+.d-0,
+.d{
+	display: none;
 }
