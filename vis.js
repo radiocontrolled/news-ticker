@@ -10,7 +10,7 @@ var svg = d3.select("article")
 			});
 		
 //get the latest Guardian articles 
-d3.jsonp("http://content.guardianapis.com/search?&api-key=qcpra5vyaq7srabthtyvhhxs&callback=vis"); 
+d3.jsonp("http://content.guardianapis.com/search?&callback=vis"); 
 
 function vis(data){
 	
@@ -32,7 +32,6 @@ function vis(data){
 						return h/4;
 					}
 			});
-		
 		
 		tickerItems
 			.transition()
