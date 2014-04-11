@@ -6,7 +6,7 @@ var svg = d3.select("article")
 			.append("svg")
 			.attr({
 				width:w,
-				height:h
+				height:h/2
 			});
 		
 //get the latest Guardian articles 
@@ -29,7 +29,7 @@ function vis(data){
 			.attr({
 				"x":10,
 				"y":function(){
-						return h/2;
+						return h/4;
 					}
 			});
 		

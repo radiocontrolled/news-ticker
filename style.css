@@ -1,12 +1,16 @@
-article{
-	text-align: center;
-	margin: 0 auto;
-}
 
+/* aligns the svg vertically / horizontally */
 svg{
 	border: 1px solid #efefef;
 	border-radius: 5px;
+	left: 0;
+  	margin: auto;
+  	position: absolute;
+  	top: 0;
+  	right: 0;
+    bottom: 0;
 }
+
 text{
 	fill: #333333;
 	font-family: Helvetica, Arial, sans-serif;
