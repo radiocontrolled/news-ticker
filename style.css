@@ -1,18 +1,12 @@
-text{
-	font-size: 1em!important;
-	fill: black;
-	font-family: Helvetica, Arial, sans-serif;
+article{
+	text-align: center;
 }
-.d-9,
-.d-8,
-.d-7,
-.d-6,
-.d-5,
-.d-4,
-.d-3,
-.d-2,
-.d-1,
-.d-0,
-.d{
-	display: none;
+svg{
+	border: #C0392B solid 1px;
+}
+text{
+	font-size: 1.5em!important;
+	fill: #2c3e50;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
 }

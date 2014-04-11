@@ -2,6 +2,7 @@ var w = window.innerWidth/1.2;
 var h = window.innerHeight/1.5;
 var datum;
 var svg = d3.select("article")
+			.style("margin", 400)
 			.append("svg")
 			.attr({
 				width:w,
@@ -18,7 +19,6 @@ function vis(data){
 	var redraw = function(foo){
 		var tickerItems = svg.selectAll("text")
 			.data(foo, function(d) { return d; })
-			
 		
 		tickerItems
 			.enter()
@@ -48,11 +48,10 @@ function vis(data){
 
 	setInterval(function() {
 						
-			if (counter < data.response.results.length){
-				
+			if (counter < data.response.results.length -1 ){
+				counter++;
 				random = [data.response.results[counter]];
-		 		redraw(random);	
-		 		counter++;	
+		 		redraw(random);			
 			}
 			else {
 				counter = data.response.results.length;
@@ -60,8 +59,6 @@ function vis(data){
 			}
 		 	
 		}, 5070);
-		
-
 };
 	
 
