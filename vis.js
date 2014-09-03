@@ -27,7 +27,9 @@ function vis(data){
 				return d.webTitle;
 			})
 			.attr({
-				"x":10,
+				"x":function(){
+					return w-10;
+				},
 				"y":function(){
 						return h/4;
 					}
@@ -35,7 +37,7 @@ function vis(data){
 		
 		tickerItems
 			.transition()
-			.attr("transform", "translate(" + w + ")")
+			.attr("x", -w)
 			.ease("linear")
 			.duration(7000)
 			.remove();		
